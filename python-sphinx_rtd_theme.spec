@@ -1,0 +1,89 @@
+#
+# Conditional build:
+%bcond_without	python2 # CPython 2.x module
+%bcond_without	python3 # CPython 3.x module
+
+%define 	module	sphinx_rtd_theme
+Summary:	ReadTheDocs.org theme for Sphinx, 2013 version
+Name:		python-%{module}
+Version:	0.1.8
+Release:	1
+License:	MIT
+Group:		Libraries/Python
+Source0:	https://pypi.python.org/packages/source/s/sphinx_rtd_theme/%{module}-%{version}.tar.gz
+# Source0-md5:	713ce7c53239449bdd799385577329ee
+URL:		https://github.com/snide/sphinx_rtd_theme/
+BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
+%if %{with python2}
+BuildRequires:	python-setuptools
+%endif
+%if %{with python3}
+BuildRequires:	python3-setuptools
+%endif
+Requires:	python-modules
+BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%description
+This is a mobile-friendly sphinx theme made for readthedocs.org.
+
+%package -n python3-%{module}
+Summary:	ReadTheDocs.org theme for Sphinx, 2013 version
+Group:		Libraries/Python
+Requires:	python3-modules
+
+%description -n python3-%{module}
+This is a mobile-friendly sphinx theme made for readthedocs.org.
+
+%prep
+%setup -q -n %{module}-%{version}
+
+%build
+%if %{with python2}
+%{__python} setup.py build --build-base build-2 %{?with_tests:test}
+%endif
+
+%if %{with python3}
+%{__python3} setup.py build --build-base build-3 %{?with_tests:test}
+%endif
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+%if %{with python2}
+%{__python} setup.py \
+	build --build-base build-2 \
+	install --skip-build \
+	--optimize=2 \
+	--root=$RPM_BUILD_ROOT
+
+%py_postclean
+%endif
+
+%if %{with python3}
+%{__python3} setup.py \
+	build --build-base build-3 \
+	install --skip-build \
+	--optimize=2 \
+	--root=$RPM_BUILD_ROOT
+%endif
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%if %{with python2}
+%files
+%defattr(644,root,root,755)
+%doc README.rst
+%{py_sitescriptdir}/%{module}
+%{py_sitescriptdir}/%{module}-%{version}-py*.egg-info
+%endif
+
+%if %{with python3}
+%files -n python3-%{module}
+%defattr(644,root,root,755)
+%doc README.rst
+%{py3_sitescriptdir}/%{module}
+%{py3_sitescriptdir}/%{module}-%{version}-py*.egg-info
+%endif
