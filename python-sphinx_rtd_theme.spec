@@ -5,6 +5,7 @@
 
 %define 	module	sphinx_rtd_theme
 Summary:	ReadTheDocs.org theme for Sphinx, 2013 version
+Summary(pl.UTF-8):	Motyw ReadTheDocs.org dla Sphinksa, wersja z 2013 roku
 Name:		python-%{module}
 Version:	0.1.8
 Release:	1
@@ -26,15 +27,24 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This is a mobile-friendly sphinx theme made for readthedocs.org.
+This is a mobile-friendly Sphinx theme made for readthedocs.org.
+
+%description -l pl.UTF-8
+Ten pakiet zawiera przyjazny dla urządzeń przenośnych motyw Sphinksa
+wykonany przez readthedocs.org.
 
 %package -n python3-%{module}
 Summary:	ReadTheDocs.org theme for Sphinx, 2013 version
+Summary(pl.UTF-8):	Motyw ReadTheDocs.org dla Sphinksa, wersja z 2013 roku
 Group:		Libraries/Python
 Requires:	python3-modules
 
 %description -n python3-%{module}
-This is a mobile-friendly sphinx theme made for readthedocs.org.
+This is a mobile-friendly Sphinx theme made for readthedocs.org.
+
+%description -n python3-%{module} -l pl.UTF-8
+Ten pakiet zawiera przyjazny dla urządzeń przenośnych motyw Sphinksa
+wykonany przez readthedocs.org.
 
 %prep
 %setup -q -n %{module}-%{version}
