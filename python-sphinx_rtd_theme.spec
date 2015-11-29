@@ -15,7 +15,7 @@ Source0:	https://pypi.python.org/packages/source/s/sphinx_rtd_theme/%{module}-%{
 # Source0-md5:	713ce7c53239449bdd799385577329ee
 URL:		https://github.com/snide/sphinx_rtd_theme/
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
 BuildRequires:	python-setuptools
 %endif
