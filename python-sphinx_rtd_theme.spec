@@ -8,7 +8,7 @@ Summary:	ReadTheDocs.org theme for Sphinx, 2013 version
 Summary(pl.UTF-8):	Motyw ReadTheDocs.org dla Sphinksa, wersja z 2013 roku
 Name:		python-%{module}
 Version:	0.1.9
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.python.org/pypi/sphinx_rtd_theme
