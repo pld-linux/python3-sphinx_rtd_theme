@@ -7,13 +7,13 @@
 Summary:	ReadTheDocs.org theme for Sphinx, 2013 version
 Summary(pl.UTF-8):	Motyw ReadTheDocs.org dla Sphinksa, wersja z 2013 roku
 Name:		python-%{module}
-Version:	0.1.9
-Release:	2
+Version:	0.2.0
+Release:	1
 License:	MIT
 Group:		Libraries/Python
-#Source0Download: https://pypi.python.org/pypi/sphinx_rtd_theme
-Source0:	https://pypi.python.org/packages/source/s/sphinx_rtd_theme/%{module}-%{version}.tar.gz
-# Source0-md5:	86a25c8d47147c872e42dc84cc66f97b
+#Source0Download: https://pypi.python.org/simple/sphinx_rtd_theme
+Source0:	https://files.pythonhosted.org/packages/source/s/sphinx_rtd_theme/%{module}-%{version}.tar.gz
+# Source0-md5:	ee8b9ceb4f62fe367240039378e4273b
 URL:		https://github.com/snide/sphinx_rtd_theme/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.710
@@ -22,7 +22,7 @@ BuildRequires:	python-modules >= 1:2.7
 BuildRequires:	python-setuptools
 %endif
 %if %{with python3}
-BuildRequires:	python3-modules >= 1:3
+BuildRequires:	python3-modules >= 1:3.2
 BuildRequires:	python3-setuptools
 %endif
 Requires:	python-modules >= 1:2.7
@@ -40,7 +40,7 @@ wykonany przez readthedocs.org.
 Summary:	ReadTheDocs.org theme for Sphinx, 2013 version
 Summary(pl.UTF-8):	Motyw ReadTheDocs.org dla Sphinksa, wersja z 2013 roku
 Group:		Libraries/Python
-Requires:	python3-modules
+Requires:	python3-modules >= 1:3.2
 
 %description -n python3-%{module}
 This is a mobile-friendly Sphinx theme made for readthedocs.org.
@@ -80,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
 %files
 %defattr(644,root,root,755)
-%doc README.rst
+%doc LICENSE README.rst
 %{py_sitescriptdir}/%{module}
 %{py_sitescriptdir}/%{module}-%{version}-py*.egg-info
 %endif
@@ -88,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python3}
 %files -n python3-%{module}
 %defattr(644,root,root,755)
-%doc README.rst
+%doc LICENSE README.rst
 %{py3_sitescriptdir}/%{module}
 %{py3_sitescriptdir}/%{module}-%{version}-py*.egg-info
 %endif
