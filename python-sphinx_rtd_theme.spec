@@ -4,25 +4,25 @@
 %bcond_without	python3 # CPython 3.x module
 
 %define 	module	sphinx_rtd_theme
-Summary:	ReadTheDocs.org theme for Sphinx, 2013 version
-Summary(pl.UTF-8):	Motyw ReadTheDocs.org dla Sphinksa, wersja z 2013 roku
+Summary:	ReadTheDocs.org theme for Sphinx
+Summary(pl.UTF-8):	Motyw ReadTheDocs.org dla Sphinksa
 Name:		python-%{module}
-Version:	0.2.0
-Release:	2
+Version:	0.4.0
+Release:	1
 License:	MIT
 Group:		Libraries/Python
-#Source0Download: https://pypi.python.org/simple/sphinx_rtd_theme
+#Source0Download: https://pypi.org/simple/sphinx_rtd_theme/
 Source0:	https://files.pythonhosted.org/packages/source/s/sphinx_rtd_theme/%{module}-%{version}.tar.gz
-# Source0-md5:	ee8b9ceb4f62fe367240039378e4273b
+# Source0-md5:	2393b28863f9576ca7074d764cb2f0e3
 URL:		https://github.com/snide/sphinx_rtd_theme/
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.710
+BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.7
 BuildRequires:	python-setuptools
 %endif
 %if %{with python3}
-BuildRequires:	python3-modules >= 1:3.2
+BuildRequires:	python3-modules >= 1:3.3
 BuildRequires:	python3-setuptools
 %endif
 Requires:	python-modules >= 1:2.7
@@ -37,10 +37,10 @@ Ten pakiet zawiera przyjazny dla urządzeń przenośnych motyw Sphinksa
 wykonany przez readthedocs.org.
 
 %package -n python3-%{module}
-Summary:	ReadTheDocs.org theme for Sphinx, 2013 version
-Summary(pl.UTF-8):	Motyw ReadTheDocs.org dla Sphinksa, wersja z 2013 roku
+Summary:	ReadTheDocs.org theme for Sphinx
+Summary(pl.UTF-8):	Motyw ReadTheDocs.org dla Sphinksa
 Group:		Libraries/Python
-Requires:	python3-modules >= 1:3.2
+Requires:	python3-modules >= 1:3.3
 
 %description -n python3-%{module}
 This is a mobile-friendly Sphinx theme made for readthedocs.org.
