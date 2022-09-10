@@ -68,6 +68,7 @@ wykonany przez readthedocs.org.
 %py_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python} -m pytest tests
 %endif
 %endif
@@ -76,6 +77,7 @@ wykonany przez readthedocs.org.
 %py3_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python3} -m pytest tests
 %endif
 %endif
