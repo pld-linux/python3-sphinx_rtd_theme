@@ -14,15 +14,18 @@ Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/s/sphinx_rtd_theme/%{module}-%{version}.tar.gz
 # Source0-md5:	b26e7ff8c3a90817bbc20fb76c530e00
 URL:		https://github.com/snide/sphinx_rtd_theme/
-BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.714
-BuildRequires:	python3-modules >= 1:3.4
+BuildRequires:	python3-modules >= 1:3.8
 BuildRequires:	python3-setuptools
 %if %{with tests}
+BuildRequires:	python3-Sphinx >= 6
+BuildRequires:	python3-docutils >= 0.18.1
 BuildRequires:	python3-pytest
 BuildRequires:	python3-readthedocs-sphinx-ext
+BuildRequires:	python3-sphinxcontrib-jquery >= 4
 %endif
-Requires:	python-modules >= 1:2.7
+BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.714
+Requires:	python3-modules >= 1:3.8
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
