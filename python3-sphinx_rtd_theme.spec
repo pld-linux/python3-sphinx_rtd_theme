@@ -6,13 +6,13 @@
 Summary:	ReadTheDocs.org theme for Sphinx
 Summary(pl.UTF-8):	Motyw ReadTheDocs.org dla Sphinksa
 Name:		python3-%{module}
-Version:	3.0.2
-Release:	4
+Version:	3.1.0
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/sphinx_rtd_theme/
 Source0:	https://files.pythonhosted.org/packages/source/s/sphinx_rtd_theme/%{module}-%{version}.tar.gz
-# Source0-md5:	b26e7ff8c3a90817bbc20fb76c530e00
+# Source0-md5:	ac4255e53e5bed61a6b48e70ca80607c
 URL:		https://github.com/snide/sphinx_rtd_theme/
 BuildRequires:	python3-modules >= 1:3.8
 BuildRequires:	python3-setuptools
@@ -20,7 +20,6 @@ BuildRequires:	python3-setuptools
 BuildRequires:	python3-Sphinx >= 6
 BuildRequires:	python3-docutils >= 0.18.1
 BuildRequires:	python3-pytest
-BuildRequires:	python3-readthedocs-sphinx-ext
 BuildRequires:	python3-sphinxcontrib-jquery >= 4
 %endif
 BuildRequires:	rpm-pythonprov
